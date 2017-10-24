@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Gallery</title>
+    <meta name="description"
+          content="Simple sortable, responsive image grid">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.css">
+    <link rel="stylesheet" href="custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Oswald" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">My Gallery</h1>
+        </div>
+        <div align="center">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="bandw">Black and white</button>
+            <button class="btn btn-default filter-button" data-filter="stills">Stills</button>
+            <button class="btn btn-default filter-button" data-filter="portrait">Portrait</button>
+            <button class="btn btn-default filter-button" data-filter="nature">Nature</button>
+        </div>
+        <br/>
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bandw">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter stills">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bandw">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter nature">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter portrait">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter nature">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter portrait">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter nature">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter nature">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter bandw">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter portrait">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter stills">
+            <a href="placeholder.png" data-title="My Image blah blah" data-lightbox="gallery">
+                <img src="placeholder.png" class="img-responsive"></a>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default  navbar-fixed-bottom">
+    <div class="container text-center">
+        <p class="navbar-text col-md-12 col-sm-12 col-xs-12">Snapped by adjhlkjs in 2017</p>
+    </div>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+
+            if (value == "all") {
+                $('.filter').show('1000');
+            }
+            else {
+                $(".filter").not('.' + value).hide('3000');
+                $('.filter').filter('.' + value).show('3000');
+
+            }
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+
+    });
+</script>
+</body>
+</html>
